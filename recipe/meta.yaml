@@ -12,16 +12,16 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
     - wheel
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pandas >=1.4.0
     - ipython >=7.20.0
     - numpy >=1.18.5
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/6chaoran/jupyter-summarytools
