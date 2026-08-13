@@ -1,18 +1,18 @@
 {% set name = "summarytools" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/summarytools-{{ version }}.tar.gz
-  sha256: 9b6f6e83e2590b81e0308568a68bc0fddc91e3467521c0033a20d62a0f66cdd7
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/summarytools-{{ version }}.tar.gz
+  sha256: ab90368dacaff4c6f728a44d5d13327596e890b59dcc2e099ac3228eaa7fd09d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
